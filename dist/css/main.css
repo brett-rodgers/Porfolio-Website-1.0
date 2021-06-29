@@ -32,6 +32,23 @@ input[class^=btn-]:hover {
   background: #2daf05;
 }
 
+.bg-main {
+  background: #2daf05;
+  color: #fff;
+}
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+.bg-light {
+  background: #fafafa;
+  color: #000;
+}
+.bg-main {
+  background: #dddddd;
+  color: #000;
+}
+
 .lead {
   font-size: 1.3rem;
   margin-bottom: 2rem;
@@ -216,7 +233,7 @@ img {
 #home-c .process-icon {
   border-radius: 50%;
   background: #333;
-  color: set-text-color(#333);
+  color: #fff;
   padding: 2rem;
   width: 70px;
   height: 70px;
@@ -232,6 +249,7 @@ img {
 }
 #home-c .process-icon:hover .process-step {
   background: #333;
+  color: #fff;
 }
 #home-c .process-step {
   position: absolute;
@@ -239,13 +257,42 @@ img {
   right: 0;
   font-size: 28px;
   background: #2daf05;
-  color: set-text-color(#2daf05);
+  color: #fff;
   border-radius: 50%;
   height: 15px;
   width: 15px;
   line-height: 15px;
   padding: 1rem;
   transition: all 1s;
+}
+
+#about-a .about-info {
+  display: grid;
+  grid-template-areas: "bioimage bio bio" "aw1 aw2 aw3";
+  gap: 1.2rem;
+}
+#about-a .bio-img {
+  grid-area: bioimage;
+}
+#about-a .bio {
+  grid-area: bio;
+  border-left: 3px solid #2daf05;
+  padding: 0.8rem;
+}
+#about-a .award-1 {
+  grid-area: aw1;
+}
+#about-a .award-2 {
+  grid-area: aw2;
+}
+#about-a .award-3 {
+  grid-area: aw3;
+}
+#about-a .award-1 .fas,
+#about-a .award-2 .fas,
+#about-a .award-3 .fas {
+  color: #2daf05;
+  margin: 1rem;
 }
 
 #main-footer {
