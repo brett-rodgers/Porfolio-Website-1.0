@@ -132,8 +132,8 @@ img {
 }
 
 #logo {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   color: #fff;
   text-transform: uppercase;
 }
@@ -294,6 +294,19 @@ img {
   color: #2daf05;
   margin: 1rem;
 }
+#about-b .progress {
+  overflow: hidden;
+  height: 20px;
+  background: #dddddd;
+  border-radius: 5px;
+  margin-bottom: 0.3rem;
+}
+#about-b .progress div {
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  background: #2daf05;
+}
 
 #main-footer {
   background: #333;
@@ -318,4 +331,19 @@ img {
 }
 #main-footer .footer-content .social .fab:hover {
   background: #2daf05;
+}
+
+@media (max-width: 800px) {
+  #header-home {
+    height: 30rem;
+  }
+  #header-home .header-content {
+    padding-top: 5rem;
+  }
+}
+@media (max-width: 500px) {
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
 }/*# sourceMappingURL=main.css.map */
