@@ -299,13 +299,21 @@ img {
   height: 20px;
   background: #dddddd;
   border-radius: 5px;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.6rem;
 }
 #about-b .progress div {
   height: 100%;
   color: #fff;
   text-align: center;
   background: #2daf05;
+}
+#about-c .about-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+#about-c .about-logos img {
+  width: 70%;
 }
 
 #main-footer {
@@ -345,5 +353,32 @@ img {
   #main-nav {
     flex-direction: column;
     align-items: center;
+  }
+  #main-nav li {
+    padding: 1rem;
+  }
+
+  #header-home {
+    height: 10rem;
+    border-bottom: 3px solid #2daf05;
+    background-position: center 10%;
+  }
+  #header-home .header-content {
+    display: none;
+  }
+  #header-inner {
+    height: 10rem;
+  }
+
+  #home-a .specials,
+#home-b .stats,
+#home-c .process,
+#about-d .testimonials,
+.items {
+    grid-template-columns: 1fr;
+  }
+
+  #main-footer {
+    grid-template-columns: 1fr;
   }
 }/*# sourceMappingURL=main.css.map */
