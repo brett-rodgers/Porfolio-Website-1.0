@@ -14,7 +14,7 @@
 }
 
 .btn-main {
-  color: #333;
+  color: #fff;
   background: #37da06;
 }
 .btn-light {
@@ -22,7 +22,7 @@
   background: #fafafa;
 }
 .btn-dark {
-  color: #333;
+  color: #fff;
   background: #333;
 }
 
@@ -44,7 +44,7 @@ input[class^=btn-]:hover {
   background: #fafafa;
   color: #000;
 }
-.bg-main {
+.bg-medium {
   background: #dddddd;
   color: #000;
 }
@@ -396,6 +396,7 @@ img {
 }
 #about-c .about-logos img {
   width: 70%;
+  margin: auto;
 }
 #about-d .testimonials {
   display: grid;
@@ -428,6 +429,34 @@ img {
 }
 #contact-a .text-fields .name-input {
   grid-area: name;
+}
+#contact-a .text-fields .subject-input {
+  grid-area: subject;
+}
+#contact-a .text-fields .email-input {
+  grid-area: email;
+}
+#contact-a .text-fields .phone-input {
+  grid-area: phone;
+}
+#contact-a .text-fields .message-input {
+  grid-area: message;
+  height: 100px;
+}
+#contact-a .text-fields .text-input {
+  padding: 0.5rem 1rem;
+}
+#contact-a button[type=submit] {
+  width: 50%;
+}
+#contact-b .contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+#contact-c h1 {
+  text-align: center;
+  font-size: 4rem;
 }
 
 #main-footer {
@@ -490,8 +519,7 @@ img {
 
   #home-a .specials,
 #home-b .stats,
-#home-c .process,
-#about-d .testimonials,
+#home-c .process #about-d .testimonials,
 .items {
     grid-template-columns: 1fr;
   }
