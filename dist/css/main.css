@@ -15,7 +15,7 @@
 
 .btn-main {
   color: #333;
-  background: #2daf05;
+  background: #ffbc00;
 }
 .btn-light {
   color: #333;
@@ -29,11 +29,11 @@
 button[class^=btn-]:hover,
 a[class^=btn-]:hover,
 input[class^=btn-]:hover {
-  background: #2daf05;
+  background: #ffbc00;
 }
 
 .bg-main {
-  background: #2daf05;
+  background: #ffbc00;
   color: #fff;
 }
 .bg-dark {
@@ -96,9 +96,76 @@ input[class^=btn-]:hover {
 .bottom-line {
   height: 2px;
   width: 3rem;
-  background: #2daf05;
+  background: #ffbc00;
   display: block;
   margin: auto;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.item {
+  position: relative;
+  background: #ffbc00;
+  overflow: hidden;
+}
+.item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background: inherit;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(2) translateX(-75%) translateY(-75%) rotate(-28deg);
+  transition: transform 3s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.item:hover:after {
+  transform: scale(2) translateX(0) translateY(0) rotate(-28deg);
+}
+.item:hover .item-image {
+  transform: scale(1.2);
+}
+.item:hover .item-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.item-image {
+  height: block;
+  transform: translateZ(0);
+  display: block;
+  transition: transform 750ms cubic-bezier(0.2, 1, 0.3, 1);
+}
+.item-image:before {
+  content: "";
+  display: block;
+  padding-top: 75%;
+  overflow: hidden;
+}
+.item-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  line-height: 0;
+}
+.item-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  transition: opacity 500ms cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 * {
@@ -161,13 +228,14 @@ img {
   border-color: #dddddd;
 }
 #main-nav a.current {
-  border-color: #2daf05;
+  border-color: #ffbc00;
 }
 
 #header-home {
   background: url("../img/showcase8.3.jpg") no-repeat center center/cover;
   height: 100vh;
   color: #fff;
+  border-bottom: 3px solid #ffbc00;
 }
 #header-home .header-content {
   text-align: center;
@@ -180,15 +248,10 @@ img {
   font-size: 4rem;
   line-height: 1.2;
 }
-#header-home .artist {
-  padding-top: 17%;
-  font-size: 0.6rem;
-  text-align: right;
-}
 #header-inner {
   background: url("../img/showcase8.3.jpg") no-repeat center 10%/cover;
   height: 5.5rem;
-  border-bottom: 3px solid #2daf05;
+  border-bottom: 3px solid #ffbc00;
 }
 
 #home-a .specials {
@@ -198,7 +261,7 @@ img {
   grid-template-columns: repeat(4, 1fr);
 }
 #home-a .specials .fas {
-  color: #2daf05;
+  color: #ffbc00;
 }
 #home-b .stats {
   display: grid;
@@ -242,7 +305,7 @@ img {
   transition: all 1s;
 }
 #home-c .process-icon:hover {
-  background: #2daf05;
+  background: #ffbc00;
   width: 90px;
   height: 90px;
   line-height: 90px;
@@ -256,7 +319,7 @@ img {
   top: 0;
   right: 0;
   font-size: 28px;
-  background: #2daf05;
+  background: #ffbc00;
   color: #fff;
   border-radius: 50%;
   height: 15px;
@@ -276,7 +339,7 @@ img {
 }
 #about-a .bio {
   grid-area: bio;
-  border-left: 3px solid #2daf05;
+  border-left: 3px solid #ffbc00;
   padding: 0.8rem;
 }
 #about-a .award-1 {
@@ -291,7 +354,7 @@ img {
 #about-a .award-1 .fas,
 #about-a .award-2 .fas,
 #about-a .award-3 .fas {
-  color: #2daf05;
+  color: #ffbc00;
   margin: 1rem;
 }
 #about-b .progress {
@@ -305,7 +368,7 @@ img {
   height: 100%;
   color: #fff;
   text-align: center;
-  background: #2daf05;
+  background: #ffbc00;
 }
 #about-c .about-logos {
   display: grid;
@@ -314,6 +377,28 @@ img {
 }
 #about-c .about-logos img {
   width: 70%;
+}
+#about-d .testimonials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+#about-d .testimonials ul {
+  list-style: none;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+#about-d .testimonials p {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+#about-d .testimonials img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
 }
 
 #main-footer {
@@ -338,15 +423,19 @@ img {
   padding: 0.5rem;
 }
 #main-footer .footer-content .social .fab:hover {
-  background: #2daf05;
+  background: #ffbc00;
 }
 
 @media (max-width: 800px) {
   #header-home {
     height: 30rem;
+    border-bottom: 3px solid #ffbc00;
   }
   #header-home .header-content {
     padding-top: 5rem;
+  }
+  #header-home .header-content h1 {
+    font-size: 3rem;
   }
 }
 @media (max-width: 500px) {
@@ -360,7 +449,7 @@ img {
 
   #header-home {
     height: 10rem;
-    border-bottom: 3px solid #2daf05;
+    border-bottom: 3px solid #ffbc00;
     background-position: center 10%;
   }
   #header-home .header-content {
