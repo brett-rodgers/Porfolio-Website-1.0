@@ -1,6 +1,3 @@
-scss/_config.scss
-scss/_utilities.scss
-scss/main.scss
 node_modules/.package-lock.json
 node_modules/.bin/mkdirp
 node_modules/.bin/mkdirp.cmd
